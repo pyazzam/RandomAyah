@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quran</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="ayah-container">
+        <div class="ayah">
+          <h1 class="decoration">﴿</h1>
+          <div class="tooltip">
+            <h1 id="h1">فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ</h1>
+            <span id="surah" class="tooltiptext">
+              <span class="surahName" id="surahName"></span>
+              <span class="divider">|</span
+              ><span id="endOfAyah" class="ayahnum">٢٢</span>
+            </span>
+          </div>
+          <h1 class="decoration">﴾</h1>
+        </div>
+        <div class="buttons-ayah">
+          <div class="refresh-button">
+            <button id="refresh">
+              <?xml version="1.0" encoding="UTF-8"?><svg
+                width="24px"
+                height="24px"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="#287B34"
+              >
+                <path
+                  d="M21.1679 8C19.6247 4.46819 16.1006 2 11.9999 2C6.81459 2 2.55104 5.94668 2.04932 11"
+                  stroke="#287B34"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3"
+                  stroke="#287B34"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M2.88146 16C4.42458 19.5318 7.94874 22 12.0494 22C17.2347 22 21.4983 18.0533 22 13"
+                  stroke="#287B34"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M7.04932 16H2.64932C2.31795 16 2.04932 16.2686 2.04932 16.6V21"
+                  stroke="#287B34"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <button id="copy">
+            <?xml version="1.0" encoding="UTF-8"?><svg
+              width="24px"
+              height="24px"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              color="#1f1f1f"
+            >
+              <path
+                d="M19.4 20H9.6C9.26863 20 9 19.7314 9 19.4V9.6C9 9.26863 9.26863 9 9.6 9H19.4C19.7314 9 20 9.26863 20 9.6V19.4C20 19.7314 19.7314 20 19.4 20Z"
+                stroke="#1f1f1f"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M15 9V4.6C15 4.26863 14.7314 4 14.4 4H4.6C4.26863 4 4 4.26863 4 4.6V14.4C4 14.7314 4.26863 15 4.6 15H9"
+                stroke="#1f1f1f"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="bento-container">
+        <div class="side-container">
+          <div dir="ltr" class="translation-container">
+            <div class="translation-top-bar-container">
+              <select name="lang" id="lang">
+                <option value="85">English</option>
+                <option value="136">French</option>
+                <option value="83">Spanish</option>
+                <option value="79">Russian</option>
+              </select>
+              <h4>Translation</h4>
+            </div>
+            <p id="translation-text" class="translation-text">
+              Establish prayer at the decline of the sun [from its meridian]
+              until the darkness of the night and [also] the Qur'an of dawn.
+              Indeed, the recitation of dawn is ever witnessed.
+            </p>
+            <p id="translation-text-dummy" class="translation-text">
+              Establish prayer at the decline
+            </p>
+          </div>
+          <div class="tafseer-container">
+            <div class="tafseer-top-bar-container">
+              <h4>تفسير</h4>
+              <select name="tafseer" id="tafseer">
+                <option value="16">التفسير المُيسّر</option>
+                <option value="91">السعدي</option>
+                <option value="14">إبن كثير</option>
+              </select>
+            </div>
+            <p id="tafseer-text" class="tafseer-text">
+              فلما جهزَّهم يوسف، وحمَّل إبلهم بالطعام، أمر عماله، فوضعوا الإناء
+              الذي كان يكيل للناس به في متاع أخيه «بنيامين» من حيث لا يشعر أحد،
+              ولما ركبوا ليسيروا نادى منادٍ قائلا يا أصحاب هذه العير المحمَّلة
+              بالطعام، إنكم لسارقون.
+            </p>
+            <p id="tafseer-text-dummy" class="tafseer-text">
+              فلما جهزَّهم يوسف، وحمَّل إبلهم بالطعام، أمر عماله، فوضعوا الإناء
+              الذي كان يكيل للناس به في متاع أخيه «بنيامين» من حيث لا يشعر أحد،
+              ولما ركبوا ليسيروا نادى منادٍ قائلا يا أصحاب هذه العير المحمَّلة
+              بالطعام، إنكم لسارقون.
+            </p>
+          </div>
+        </div>
+        <div class="recitation-container">
+          <div class="recitation-top-bar">
+            <h4>تلاوة</h4>
+            <select name="recitation-select" id="recSelect">
+              <option value="2">عبدالباسط عبدالصمد</option>
+              <option value="4">أبو بكر الشاطري</option>
+              <option value="7">مشاري العفاسي</option>
+            </select>
+          </div>
+          <div class="player-container">
+            <audio
+              id="player"
+              controls
+              type="audio/mp3"
+              dir="ltr"
+              src=""
+            ></audio>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

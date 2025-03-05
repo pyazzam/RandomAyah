@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box;
+
+
+}
+
+body {
+    background: #FDFDFD;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    margin-top: 10em;
+    padding-left: 20em;
+    padding-right: 20em;
+}
+
+#h1 {
+    font-family: "KFGQPC Uthmanic Script HAFS";
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+h2,
+p,
+h4 {
+    font-family: tajawal;
+}
+
+.ayah-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6em;
+    user-select: none;
+
+}
+
+.ayah {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 6em;
+}
+
+.tooltip {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+}
+
+.tooltip .tooltiptext {
+    font-family: "KFGQPC Uthmanic Script HAFS";
+    position: relative;
+    display: flex;
+    direction: rtl !important;
+
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    visibility: hidden;
+    font-size: 1em;
+    width: 140px;
+    height: 2.5em;
+
+    border: 1px solid #e9e9e9;
+    color: #000000;
+    text-align: center;
+    padding: 0px 0;
+    border-radius: 0.8em;
+
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    opacity: 0;
+    transition: all 120ms
+}
+
+span.ayahnum {
+    font-family: "KFGQPC Uthmanic Script HAFS";
+    font-size: 1.8em;
+    padding: 0;
+    direction: rtl !important;
+    unicode-bidi: plaintext !important;
+    color: #0e6e1c;
+}
+
+span.divider {
+    color: #0000002c;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    background: none;
+    border-color: #e6e6e6 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.decoration {
+    display: block;
+    width: fit-content;
+    color: #287B34;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-family: "KFGQPC Uthmanic Script HAFS";
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.buttons-ayah {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#copy {
+    width: 3em;
+    height: 3em;
+    background: none;
+    border: 1px solid #c9c9c9;
+    border-radius: 0.6em;
+    margin-left: 1em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all ease-in-out 120ms
+}
+
+#copy svg {
+    display: block;
+}
+
+#copy:hover {
+    border: 1px solid #a8a8a8;
+    background: #f8f8f8;
+}
+
+#copy:active {
+    transform: scale(95%);
+
+}
+
+#copy.copied {
+    background: #f3fff4;
+    border: 1px solid #0e6e1c;
+}
+
+#refresh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 3em;
+    height: 3em;
+    appearance: none;
+    background: none;
+    padding: 0.5em;
+    border-radius: 50%;
+    border: 1.8px solid #287B34;
+    cursor: pointer;
+    transition: all ease-in-out 100ms;
+}
+
+#refresh:hover {
+    background: rgb(248, 255, 247);
+    border: 1.8px solid #0e6e1c;
+
+}
+
+#refresh:active {
+    transform: scale(97%);
+}
+
+.refresh-button svg {
+    color: #d6e9d9;
+    display: block;
+}
+
+.translation-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-arou; */
+    background: #fcfcfc;
+    border-radius: 1em;
+    border: 1px solid #e0e0e0;
+    padding: 2em;
+    padding-top: 1em;
+    width: 100%;
+    padding-bottom: 1em;
+    margin-bottom: 1.25em;
+}
+
+.translation-top-bar-container {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+span.arabic.qpc-hafs.brown {
+    color: #0e6e1c;
+    font-family: "KFGQPC Uthmanic Script HAFS";
+    font-weight: 500;
+}
+
+span.arabic.qpc-hafs {
+    color: #0e6e1c;
+    font-family: "KFGQPC Uthmanic Script HAFS";
+    font-weight: 500;
+}
+
+span.reference.brown {
+    color: rgb(153, 153, 153);
+    font-weight: 400;
+}
+
+h4 {
+    color: #757575;
+    font-weight: normal;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+select {
+    padding: 0.5em;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+    background: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5em;
+    transition: ease-in-out 100ms;
+    font-family: 'tajawal';
+    cursor: pointer;
+
+
+
+}
+
+select:hover {
+    border-color: #c0c0c0;
+}
+
+.skeleton {
+    width: 100%;
+    background: linear-gradient(90deg, #f5f5f5 25%, #f3f3f3 50%, #f8f8f8 75%);
+    background-size: 200% 100%;
+    animation: shimmer 4s infinite;
+    height: 1em;
+    border-radius: 5px;
+}
+
+#h1.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f7f7f7 75%);
+    background-size: 200% 100%;
+    animation: shimmer 4s infinite;
+    color: transparent;
+}
+
+#tafseer-text.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f7f7f7 75%);
+    background-size: 200% 100%;
+    animation: shimmer 4s infinite;
+    color: transparent;
+}
+
+#tafseer-text.skeleton span {
+    display: none;
+}
+
+#translation-text.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f7f7f7 75%);
+    background-size: 200% 100%;
+    animation: shimmer-ltr 4s infinite;
+    color: transparent;
+    height: 1em;
+}
+
+
+
+#translation-text-dummy {
+    display: none;
+}
+
+#tafseer-text-dummy {
+    display: none;
+}
+
+#translation-text-dummy.skeleton {
+    margin-top: 0.5em;
+    width: 60%;
+    display: block;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f7f7f7 75%);
+    background-size: 200% 100%;
+    animation: shimmer-ltr 4s infinite;
+    color: transparent;
+}
+
+#tafseer-text-dummy.skeleton {
+    margin-top: 0.5em;
+    width: 80%;
+    display: block;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f7f7f7 75%);
+    background-size: 200% 100%;
+    animation: shimmer 4s infinite;
+    color: transparent;
+}
+
+@keyframes shimmer {
+    from {
+        background-position: -200% 0;
+    }
+
+    to {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes shimmer-ltr {
+    from {
+        background-position: 200% 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
+
+.tafseer-container {
+    width: 100%;
+    background: #fcfcfc;
+    border-radius: 1em;
+    border: 1px solid #e0e0e0;
+    padding: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 1.25em;
+    margin-left: 1.25em;
+}
+
+.tafseer-top-bar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1em;
+}
+
+.side-container {
+    display: flex;
+    flex-direction: row-reverse;
+    height: max-content;
+}
+
+.recitation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fcfcfc;
+    border-radius: 1em;
+    border: 1px solid #e0e0e0;
+    padding: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 100%;
+
+}
+
+#translation-text {
+    font-size: 1.1em;
+}
+
+.recitation-top-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1em;
+}
+
+.share-container {
+    background: #fcfcfc;
+    border-radius: 1em;
+    border: 1px solid #e0e0e0;
+    padding: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 25%;
+    margin-left: 0.8em;
+}
+
+.share-top-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+button.share-text,
+button.share-img {
+    padding: 0.5em;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+    background: none;
+    background: #f3f3f3;
+    border: 1px solid #d6d6d6;
+    border-radius: 0.5em;
+    transition: ease-in-out 100ms;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+button.share-text {
+    margin-bottom: 0.5em;
+}
+
+audio {
+    width: 100%;
+
+}
+
+@media screen and (max-width: 1365px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        outline: 1px solid red;
+
+        box-sizing: border-box;
+    }
+
+
+    html {
+        width: 100%;
+    }
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+
+
+    .container {
+        margin-top: 1.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+        width: fit-content;
+        align-items: center;
+    }
+
+    .ayah-container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .ayah {
+        width: 100%;
+        justify-items: center;
+        align-items: center;
+        margin-bottom: 1em;
+        margin-left: 0;
+    }
+
+    .side-container {
+        flex-direction: column;
+    }
+
+    #h1 {
+        font-size: 1.5em;
+    }
+}
